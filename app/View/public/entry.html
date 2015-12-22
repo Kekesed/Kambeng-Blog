@@ -1,0 +1,55 @@
+<div class="demo-back">
+  <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" href="/" title="go back" role="button">
+	<i class="material-icons" role="presentation">arrow_back</i>
+  </a>
+</div>
+<div class="demo-blog__posts mdl-grid">
+  <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+	<div class="mdl-card__media mdl-color-text--grey-50" style="background-image: url('{{\Control\App::resolve_picturl(@post.cast.cid,'lg')}}')">
+	  <h3>{{@post.cast.title}}<h3>
+	</div>
+	<div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+	  <div class="minilogo" style="background-image: url('{{\Control\App::resolve_picturl(@post.cast.user.ppid, 'sm')}}')"></div>
+	  <div>
+		<strong>{{@post.cast.user.nama_depan . " " . @post.cast.user.nama_belakang}}</strong>
+		<span>{{date('D, t\<\s\u\p\>S\<\/\s\u\p\> M Y', @post.cast.date_created)}}</span>
+	  </div>
+	</div>
+	<div class="mdl-color-text--grey-700 mdl-card__supporting-text">
+		<p>{{@post.cast.content}}</p>
+	</div>
+	<div class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+	<div id="disqus_thread"></div>
+		<script>
+		var disqus_config = function () {
+		this.page.url = "{{@BASE}}"; // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = "{{@post.cast.uniq_url}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		(function() {
+		var d = document, s = d.createElement('script');
+		s.src = '//kambeng.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+	</div>
+  </div>
+
+  <nav class="demo-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+	<a href="index.html" class="demo-nav__button">
+	  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+		<i class="material-icons">arrow_back</i>
+	  </button>
+	  Newer
+	</a>
+	<div class="section-spacer"></div>
+	<a href="index.html" class="demo-nav__button">
+	  Older
+	  <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+		<i class="material-icons">arrow_forward</i>
+	  </button>
+	</a>
+  </nav>
+</div>
+
+<script id="dsq-count-scr" src="//kambeng.disqus.com/count.js" async></script>
