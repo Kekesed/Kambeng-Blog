@@ -57,7 +57,7 @@
         <strong>Copyright &copy; {{@kekesed.copyright.year_start}}-{{date("Y")}}.</strong> {{@kekesed.copyright.text}}
       </footer>
 
-      <include href="admin/component/c_aside.php"/>
+      <exclude><include href="admin/component/c_aside.php"/></exclude>
     </div>
     <script src="/assets/adminlte/plugins/jQuery/jQuery-2.1.4.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>

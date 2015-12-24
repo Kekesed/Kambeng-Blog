@@ -3,9 +3,9 @@
 Namespace Model;
 class User extends \DB\SQL\Mapper{
 	function __construct($uid = NULL) {
-		parent::__construct(\kksd\Sesi::$DB, "tbluser");
+		parent::__construct(\kksd\Sesi::$DB, "users");
 		if($uid != NULL) {
-			$this->load(array("uid=?",$uid));
+			$this->load(array("id=?",$uid));
 		}
 	}
 	
@@ -14,8 +14,5 @@ class User extends \DB\SQL\Mapper{
 		$this->pass=$this->passwordify($this->pass);
 		
 		parent::save();
-	}
-	public function passwordify($pass) {
-		return hash('SHA256', $pass);
 	}
 }
