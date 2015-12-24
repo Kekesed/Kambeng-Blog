@@ -44,7 +44,8 @@ final class Base extends Prefab implements ArrayAccess {
 
 	//@{ Framework details
 	const
-		PACKAGE='Fat-Free Framework',
+		PACKAGE='Kekesed/Kambeng-blog v1',
+		#PACKAGE='Fat-Free Framework',
 		VERSION='3.5.0-Release';
 	//@}
 

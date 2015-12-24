@@ -1,0 +1,10 @@
+<?xml version='1.0' standalone='yes'?>
+<component>
+	<fungsi name="Ruang Kontrol" namespace="dash" icon="fa-dashboard"/>
+	<fungsi name="Posting" namespace="post" index="Atur">
+		<f name="Baru" namespace="new"/>
+	</fungsi>
+	<fungsi name="Akun" namespace="account" icon="fa-user" index="Atur">
+		<f name="Baru" namespace="new"/>
+	</fungsi>
+</component>

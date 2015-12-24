@@ -10,8 +10,8 @@ class Imager extends \Image {
 		$this->db = new \DB\SQL\Mapper(\kksd\Sesi::$DB, "tblimage");
 		if($pid != NULL) {
 			$this->db = $this->db->find(array("pid=?",$pid))[0];
-			/* if($db->loaded == 0)
-				throw new \Execption("Error: The image with specified id are not found.");	 */		
+			if($db->loaded() == 0)
+				throw new \Execption("Error: The image with specified id are not found.");	
 			$this->casted = $this->db->cast();
 			parent::__construct($this->casted['source'], false, __DIR__ . '/../../gamvar/');
 		}
